@@ -106,7 +106,7 @@ export default function Projects() {
               Explore the world of Rick and Morty with this API that provides
               access to information about characters. With a simple and
               user-friendly interface, this API is perfect for developers and
-              fans alike.
+              fans.
             </p>
           </div>
           <div className="card__info">
