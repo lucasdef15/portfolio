@@ -86,6 +86,7 @@
   background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%),
     linear-gradient(0deg, #42446e, #42446e);
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
 }
 .active::after {
