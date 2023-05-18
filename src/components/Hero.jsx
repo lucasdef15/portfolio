@@ -5,10 +5,11 @@ export default function Hero() {
   return (
     <div className="hero" id="hero">
       <div className="hero__text">
-        <p>Greetings 👋,</p>
+        <p>Hello there! 👋</p>
         <p>
-          I'm <span>Lucas</span> and I&apos;m a web wizard 🧙‍♂️.
+          I'm <span>Lucas!</span>
         </p>
+        <p>A web developer.</p>
       </div>
       <div className="circle">
         <div className="hero__img__wrapper">

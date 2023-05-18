@@ -123,6 +123,7 @@
 .cvBtn {
   font-size: clamp(1rem, 1vw, 1.25rem);
   background: #42446e;
+  animation: growShrink 1s infinite ease;
 }
 
 @media (max-width: 75em) {
@@ -139,5 +140,21 @@
   }
   .contact__form {
     width: 90vw;
+    max-width: 450px;
+  }
+  .btn {
+    width: 100%
+  }
+}
+
+@keyframes growShrink {
+  0% {
+    transform: scale(1)
+  }
+  70% {
+    transform: scale(0.95)
+  }
+  100% {
+    transform: scale(1);
   }
 }

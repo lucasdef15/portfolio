@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdOutlineMailOutline } from 'react-icons/md';
+import cvpdf from '../download/Lucas_cv.pdf';
 import '../styles/Contact.css';
 
 export default function Contact() {
@@ -9,7 +10,7 @@ export default function Contact() {
   const downloadTxtFile = () => {
     const link = document.createElement('a');
     link.download = 'curriculum.pdf';
-    link.href = 'download/Lucas_cv.pdf';
+    link.href = cvpdf;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
