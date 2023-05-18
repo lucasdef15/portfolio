@@ -1,7 +1,6 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
 import { projectsData } from '../data/ProjectsData';
-import AnimatedCard from './AnimatedCard';
 
 export default function Projects() {
   console.log(projectsData);
