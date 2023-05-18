@@ -134,6 +134,12 @@
   border-radius: 1em;
   overflow: hidden;
 }
+.card img{
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / .6;
+  object-fit: cover;
+}
 .card__body {
   width: 100%;
   padding: 1em;

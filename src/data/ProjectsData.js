@@ -10,7 +10,7 @@ export const projectsData = [
     id: '0',
     title: 'Multi-step form',
     description:
-      'This is a Multi-step form built with React, React Hook Form, and Yup for validation. Additionally, I utilized Redux as a state manager and React Router for handling routes. The form allows users to progress through multiple steps while keeping track of their choices. It also provides the flexibility to navigate back and modify data if needed.',
+      'Multi-step form with React, React Hook Form, and Yup for validation. Redux manages state, React Router handles routes. Users progress through steps, track choices, and modify data if necessary.',
     techStack: 'React.js, React Router, Axios, Redux',
     livePreviewLink: 'https://bucolic-sunburst-e006de.netlify.app/',
     codeLink: 'https://github.com/lucasdef15/multi-step-form',
@@ -20,7 +20,7 @@ export const projectsData = [
     id: '1',
     title: 'Git Hub User Search',
     description:
-      "In this project, I leveraged the GitHub Users API to retrieve and showcase user profile data. I utilized Axios for making the HTTP request, while constructing the user interface with a combination of Material UI and Styled Components. Additionally, I implemented custom hooks to persist the user's preferred theme color in local storage, ensuring a seamless and personalized experience.",
+      'Leveraged GitHub Users API for profile data. Used Axios for requests and Material UI + Styled Components for UI. Custom hooks saved theme in local storage, providing seamless personalization.',
     techStack: 'React.js, Context API, Axios',
     livePreviewLink: 'https://github-user-search-wheat.vercel.app/',
     codeLink: 'https://github.com/lucasdef15/github-user-search',
