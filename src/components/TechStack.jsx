@@ -9,6 +9,18 @@ import npm from '../assets/stacks/npm.svg';
 import react from '../assets/stacks/react.svg';
 import typescript from '../assets/stacks/typescript.svg';
 import vscode from '../assets/stacks/vscode.svg';
+import { motion } from 'framer-motion';
+
+const teckStackVariants = {
+  hover: {
+    scale: 1.3,
+    origin: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 500,
+    },
+  },
+};
 
 export default function TechStack() {
   return (
@@ -18,16 +30,66 @@ export default function TechStack() {
         <p> Technologies I&apos;ve been working with recently</p>
       </div>
       <div className="stacks">
-        <img src={css3} alt="css3" />
-        <img src={html5} alt="html5" />
-        <img src={javascript} alt="javascript" />
-        <img src={typescript} alt="typescript" />
-        <img src={react} alt="react" />
-        <img src={nodejs} alt="nodejs" />
-        <img src={mongodb} alt="mongodb" />
-        <img src={npm} alt="npm" />
-        <img src={figma} alt="figma" />
-        <img src={vscode} alt="vscode" />
+        <motion.img
+          src={css3}
+          alt="css3"
+          variants={teckStackVariants}
+          whileHover="hover"
+        />
+        <motion.img
+          variants={teckStackVariants}
+          whileHover="hover"
+          src={html5}
+          alt="html5"
+        />
+        <motion.img
+          variants={teckStackVariants}
+          whileHover="hover"
+          src={javascript}
+          alt="javascript"
+        />
+        <motion.img
+          variants={teckStackVariants}
+          whileHover="hover"
+          src={typescript}
+          alt="typescript"
+        />
+        <motion.img
+          variants={teckStackVariants}
+          whileHover="hover"
+          src={react}
+          alt="react"
+        />
+        <motion.img
+          variants={teckStackVariants}
+          whileHover="hover"
+          src={nodejs}
+          alt="nodejs"
+        />
+        <motion.img
+          variants={teckStackVariants}
+          whileHover="hover"
+          src={mongodb}
+          alt="mongodb"
+        />
+        <motion.img
+          variants={teckStackVariants}
+          whileHover="hover"
+          src={npm}
+          alt="npm"
+        />
+        <motion.img
+          variants={teckStackVariants}
+          whileHover="hover"
+          src={figma}
+          alt="figma"
+        />
+        <motion.img
+          variants={teckStackVariants}
+          whileHover="hover"
+          src={vscode}
+          alt="vscode"
+        />
       </div>
     </div>
   );

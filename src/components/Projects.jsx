@@ -1,9 +1,10 @@
-import React from 'react';
+import { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import { projectsData } from '../data/ProjectsData';
+import Card from './Card';
 
 export default function Projects() {
-  console.log(projectsData);
+  const [selectedId, setSelectedId] = useState(null);
   return (
     <div className="projects" id="projects">
       <div className="projects__title">
@@ -11,9 +12,22 @@ export default function Projects() {
         <p>Things I've built so far</p>
       </div>
 
-      <div className="projects__cards">
+      {/* <div className="projects__cards">
         {projectsData.map((project, index) => {
           return <ProjectCard project={project} key={index} />;
+        })}
+      </div> */}
+      <div className="projects__cards">
+        {projectsData.map((project, index) => {
+          return (
+            <Card
+              project={project}
+              key={index}
+              setSelectedId={setSelectedId}
+              selectedId={selectedId}
+              projectsData={projectsData}
+            />
+          );
         })}
       </div>
     </div>

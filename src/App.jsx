@@ -3,7 +3,9 @@ import {
   RouterProvider,
   Route,
   createRoutesFromElements,
+  useLocation,
 } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
 //pages
 import Home from './pages/Home';
@@ -24,5 +26,9 @@ const router = createBrowserRouter(
 );
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <AnimatePresence mode="wait">
+      <RouterProvider router={router} />
+    </AnimatePresence>
+  );
 }

@@ -61,7 +61,7 @@ export const projectsData = [
     title: 'Upcoming',
     description:
       'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
-    techStack: 'React.js, React Router, Axios',
+    techStack: '',
     livePreviewLink: '#',
     codeLink: '#',
     coverImage: cover,
