@@ -2,10 +2,11 @@ import { BsFillBuildingFill } from 'react-icons/bs';
 import { GoLocation } from 'react-icons/go';
 import { BsCalendar3 } from 'react-icons/bs';
 import '../styles/About.css';
+import { motion } from 'framer-motion';
 
 export default function About() {
   return (
-    <div className="about">
+    <motion.div className="about">
       <div className="about-me">
         <h2 className="title__primary">About Me</h2>
         <p className="text">
@@ -128,6 +129,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
