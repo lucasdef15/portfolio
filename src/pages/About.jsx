@@ -3,10 +3,17 @@ import { GoLocation } from 'react-icons/go';
 import { BsCalendar3 } from 'react-icons/bs';
 import '../styles/About.css';
 import { motion } from 'framer-motion';
+import { routesVariants } from '../animations/animations';
 
 export default function About() {
   return (
-    <motion.div className="about">
+    <motion.div
+      className="about"
+      variants={routesVariants}
+      initial="initial"
+      animate="visible"
+      exit="exit"
+    >
       <div className="about-me">
         <h2 className="title__primary">About Me</h2>
         <p className="text">

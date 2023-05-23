@@ -1,6 +1,8 @@
 import React from 'react';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import cvpdf from '../download/Lucas_cv.pdf';
+import { routesVariants } from '../animations/animations';
+import { motion } from 'framer-motion';
 import '../styles/Contact.css';
 
 export default function Contact() {
@@ -16,7 +18,13 @@ export default function Contact() {
     document.body.removeChild(link);
   };
   return (
-    <div className="contact-page">
+    <motion.div
+      className="contact-page"
+      variants={routesVariants}
+      initial="initial"
+      animate="visible"
+      exit="exit"
+    >
       <div className="contact">
         <div className="contact-title">
           <h2>Let&apos;s chat.</h2>
@@ -81,6 +89,6 @@ export default function Contact() {
           </button>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }

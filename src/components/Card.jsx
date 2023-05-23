@@ -4,7 +4,7 @@ import FullCard from './FullCard';
 const hoverVariant = {
   hover: {
     opacity: 1,
-    scale: 1.5,
+    scale: 1.3,
     textShadow: '0px 0px 2px rgb(255, 255, 255)',
   },
 };

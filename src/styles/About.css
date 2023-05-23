@@ -30,26 +30,31 @@
 .work {
   display: grid;
   gap: 2rem;
+  overflow-x: scroll;
 }
 .about__card {
   display: grid;
-  gap: 0.5rem;
+  gap: .5rem;
   border-bottom: 1px solid #66666665;
+
 }
 .job {
   display: flex;
   justify-content: space-between;
-  gap: 1em;
+  gap: 2em;
+  white-space: nowrap;
+  text-align: left;
 }
 .job span {
   color: #018c0f;
   background-color: #d7ffe0;
-  font-size: clamp(0.5rem, 1vw, 0.7rem);
+  font-size: 0.7rem;
   font-weight: 600;
   padding: 0 3em;
   border-radius: 2rem;
   display: grid;
   place-content: center;
+  white-space: nowrap;
 }
 .job__info {
   display: flex;

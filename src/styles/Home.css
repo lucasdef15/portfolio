@@ -12,11 +12,11 @@
   width: 50%;
   max-width: 800px;
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 4rem);
   font-weight: 700;
   line-height: 1.2em;
   letter-spacing: -1px;
-  text-align: left;
+  text-align: center;
 }
 .hero__text span {
   background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%),
@@ -26,30 +26,29 @@
   color: transparent;
 }
 .circle {
-  width: 35%;
-  min-width: 230px;
+  width: 40%;
+  min-width: 430px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%),
     linear-gradient(0deg, #42446e, #42446e);
   aspect-ratio: 1 / 1;
-  border-radius: 50%;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
 }
 .hero__img__wrapper {
-  width: 97%;
-  min-width: 220px;
-  border-radius: 50%;
-  aspect-ratio: 1 / 1;
+  width: 98%;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
   overflow: hidden;
-  position: relative;
+  
 }
 .hero__img {
-  position: absolute;
-  top: -4vw;
-  width: 50vw;
-  min-width: 220px;
-  scale: 1.35;
+
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+  scale: 1.4;
+  position: relative;
+  top: -80px;
+
 }
 
 /* Tech Stack */
@@ -200,7 +199,6 @@
   border-radius: 1rem;
   box-shadow: 10px 10px 0 #0e0e0e;
   overflow: hidden;
-
 }
 .motion-card img{
   display: block;
@@ -239,7 +237,6 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-
 }
 .full-card h5{
   font-size: 1.5rem;
@@ -283,9 +280,11 @@
     flex-direction: column;
     justify-content: center;
     gap: 4em;
+    height: auto;
   }
   .hero__text {
     width: 100%;
+    margin-top: 5em;
   }
   .hero__img {
     top: -5vw;
@@ -294,7 +293,18 @@
   .techstack__title {
     width: 80vw;
   }
-}
-
-@media (max-width: 30em) {
+  .circle {
+    min-width: 280px;
+    margin-bottom: 10vmin;
+  }
+  .full-card{
+    background: #ffffff;
+    width: 95%;
+    height: 62%;
+    padding: 2rem;
+    border-radius: 1rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
 }
