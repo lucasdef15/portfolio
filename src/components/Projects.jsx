@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import ProjectCard from './ProjectCard';
 import { projectsData } from '../data/ProjectsData';
 import Card from './Card';
 
@@ -12,11 +11,6 @@ export default function Projects() {
         <p>Things I've built so far</p>
       </div>
 
-      {/* <div className="projects__cards">
-        {projectsData.map((project, index) => {
-          return <ProjectCard project={project} key={index} />;
-        })}
-      </div> */}
       <div className="projects__cards">
         {projectsData.map((project, index) => {
           return (

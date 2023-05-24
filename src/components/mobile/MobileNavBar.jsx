@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useCallback, useEffect } from 'react';
 import { motion, useCycle } from 'framer-motion';
 import { useDimensions } from '../../hooks/use-dimensions';
 import { MenuToggle } from './MenuToggle';
@@ -29,6 +29,29 @@ export default function MobileNavBar({ sidebarStyle, handleClose }) {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
+
+  const handleBodyClick = useCallback(
+    (event) => {
+      const isExcluded = event.target.closest('.mobile-nav');
+
+      if (isOpen && !isExcluded) {
+        toggleOpen();
+      } else {
+        return;
+      }
+    },
+    [isOpen]
+  );
+
+  useEffect(() => {
+    document.body.addEventListener('click', handleBodyClick, { capture: true });
+
+    return () => {
+      document.body.removeEventListener('click', handleBodyClick, {
+        capture: true,
+      });
+    };
+  }, [handleBodyClick]);
 
   return (
     <motion.nav

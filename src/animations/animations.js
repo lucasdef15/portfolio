@@ -1,12 +1,18 @@
 export const routesVariants = {
   initial: {
-    width: 0,
+    opacity: 0,
   },
   visible: {
-    width: '100%',
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring',
+      mass: 0.4,
+      damping: 10,
+    },
   },
   exit: {
-    x: window.innerWidth,
-    transition: { duration: 0.2, ease: 'easeInOut' },
+    opacity: 0,
+    transition: { ease: 'easeInOut' },
   },
 };

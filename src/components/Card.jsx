@@ -3,9 +3,8 @@ import FullCard from './FullCard';
 
 const hoverVariant = {
   hover: {
-    opacity: 1,
     scale: 1.3,
-    textShadow: '0px 0px 2px rgb(255, 255, 255)',
+    opacity: 1,
   },
 };
 
@@ -17,7 +16,6 @@ export default function Card({
 }) {
   const handleClick = (id) => {
     setSelectedId(id);
-    console.log(id);
   };
   return (
     <>

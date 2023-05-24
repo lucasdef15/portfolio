@@ -9,6 +9,7 @@ import npm from '../assets/stacks/npm.svg';
 import react from '../assets/stacks/react.svg';
 import typescript from '../assets/stacks/typescript.svg';
 import vscode from '../assets/stacks/vscode.svg';
+import redux from '../assets/stacks/redux-original.svg';
 import { motion } from 'framer-motion';
 
 const teckStackVariants = {
@@ -69,7 +70,7 @@ export default function TechStack() {
         <motion.img
           variants={teckStackVariants}
           whileHover="hover"
-          src={mongodb}
+          src={redux}
           alt="mongodb"
         />
         <motion.img
