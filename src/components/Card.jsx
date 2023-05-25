@@ -17,6 +17,7 @@ export default function Card({
   const handleClick = (id) => {
     setSelectedId(id);
   };
+
   return (
     <>
       <motion.div
@@ -24,7 +25,7 @@ export default function Card({
         layoutId={project.id}
         onClick={() => handleClick(project.id)}
       >
-        <img src={project.coverImage} alt={project.title} />
+        <img src={project.coverImage[0]} alt={project.title} />
         <motion.h3 variants={hoverVariant} whileHover="hover">
           {project.title}
         </motion.h3>

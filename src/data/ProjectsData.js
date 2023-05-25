@@ -1,9 +1,24 @@
-import ecomerceimg from '../assets/projects/e-comerce.png';
 import rickandmortyimg from '../assets/projects/rickandmorty.png';
 import todolistimg from '../assets/projects/todolist.png';
-import multistepform from '../assets/projects/multiStepForm.png';
-import gitHubusersearch from '../assets/projects/gitHubusersearch.png';
+
 import cover from '../assets/projects/cover.jpg';
+
+import githubpage1 from '../assets/projects/githubimgs/page1.png';
+import githubpage2 from '../assets/projects/githubimgs/page2.png';
+import githubpage3 from '../assets/projects/githubimgs/page3.png';
+import githubpage4 from '../assets/projects/githubimgs/page4.png';
+
+import mutlformpage1 from '../assets/projects/multiform/step1.png';
+import mutlformpage2 from '../assets/projects/multiform/step2.png';
+import mutlformpage3 from '../assets/projects/multiform/step3.png';
+import mutlformpage4 from '../assets/projects/multiform/step4.png';
+import mutlformpage5 from '../assets/projects/multiform/step5.png';
+
+import ecomerce1 from '../assets/projects/ecomerce/page1.png';
+import ecomerce2 from '../assets/projects/ecomerce/page2.png';
+import ecomerce3 from '../assets/projects/ecomerce/page3.png';
+import ecomerce4 from '../assets/projects/ecomerce/page4.png';
+import ecomerce5 from '../assets/projects/ecomerce/page5.png';
 
 export const projectsData = [
   {
@@ -14,7 +29,13 @@ export const projectsData = [
     techStack: 'React.js, React Router, Axios, Redux',
     livePreviewLink: 'https://bucolic-sunburst-e006de.netlify.app/',
     codeLink: 'https://github.com/lucasdef15/multi-step-form',
-    coverImage: multistepform,
+    coverImage: [
+      mutlformpage1,
+      mutlformpage2,
+      mutlformpage3,
+      mutlformpage4,
+      mutlformpage5,
+    ],
   },
   {
     id: '1',
@@ -24,7 +45,7 @@ export const projectsData = [
     techStack: 'React.js, Context API, Axios',
     livePreviewLink: 'https://github-user-search-wheat.vercel.app/',
     codeLink: 'https://github.com/lucasdef15/github-user-search',
-    coverImage: gitHubusersearch,
+    coverImage: [githubpage1, githubpage2, githubpage3, githubpage4],
   },
   {
     id: '2',
@@ -34,7 +55,7 @@ export const projectsData = [
     techStack: 'HTML5, CSS3, JavaScript',
     livePreviewLink: 'https://rositacosturacriativa.netlify.app',
     codeLink: 'https://github.com/lucasdef15/ecomerce-project',
-    coverImage: ecomerceimg,
+    coverImage: [ecomerce1, ecomerce2, ecomerce3, ecomerce4, ecomerce5],
   },
   {
     id: '3',
@@ -44,7 +65,7 @@ export const projectsData = [
     techStack: 'React.js, CSS3',
     livePreviewLink: 'https://tourmaline-bavarois-49d2df.netlify.app',
     codeLink: 'https://github.com/lucasdef15/react_todo-list',
-    coverImage: todolistimg,
+    coverImage: [todolistimg],
   },
   {
     id: '4',
@@ -54,7 +75,7 @@ export const projectsData = [
     techStack: 'React.js, React Router, Axios',
     livePreviewLink: 'https://celebrated-figolla-13a43e.netlify.app',
     codeLink: 'https://github.com/lucasdef15/Rick_and_Morty_API_Project',
-    coverImage: rickandmortyimg,
+    coverImage: [rickandmortyimg],
   },
   {
     id: '5',
@@ -64,6 +85,6 @@ export const projectsData = [
     techStack: '',
     livePreviewLink: '#',
     codeLink: '#',
-    coverImage: cover,
+    coverImage: [cover],
   },
 ];

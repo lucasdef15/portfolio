@@ -4,6 +4,7 @@ import Card from './Card';
 
 export default function Projects() {
   const [selectedId, setSelectedId] = useState(null);
+
   return (
     <div className="projects" id="projects">
       <div className="projects__title">

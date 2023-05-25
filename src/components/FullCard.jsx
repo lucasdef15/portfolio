@@ -1,7 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { BsLink45Deg } from 'react-icons/bs';
 import { BsGithub } from 'react-icons/bs';
+import Slider from './Slider';
 
 const backdropVariants = {
   initial: { opacity: 0 },
@@ -12,7 +13,6 @@ export default function FullCard({ selectedId, setSelectedId, projectsData }) {
   const selectedProject = projectsData.find(
     (project) => project.id === selectedId
   );
-  console.log(selectedProject);
 
   return (
     <motion.div
@@ -22,19 +22,13 @@ export default function FullCard({ selectedId, setSelectedId, projectsData }) {
       animate="visible"
     >
       <motion.div layoutId={selectedId} className="full-card">
-        <motion.div className="full-card-body">
-          <motion.h5>{selectedProject.title}</motion.h5>
-          <motion.p>{selectedProject.description}</motion.p>
-          <motion.button onClick={() => setSelectedId(null)}>x</motion.button>
-        </motion.div>
         <motion.div className="img-container">
-          <motion.img
-            src={selectedProject.coverImage}
-            alt={selectedProject.title}
-          />
+          <AnimatePresence>
+            <Slider selectedProject={selectedProject} />
+          </AnimatePresence>
           <motion.div className="card__info">
             <motion.span>
-              <motion.strong>Tech Stack: </motion.strong>{' '}
+              <motion.strong>Tech Stack: </motion.strong>
               {selectedProject.techStack}
             </motion.span>
             <motion.div className="card__links">
@@ -55,6 +49,17 @@ export default function FullCard({ selectedId, setSelectedId, projectsData }) {
               </motion.div>
             </motion.div>
           </motion.div>
+        </motion.div>
+
+        <motion.div className="full-card-body">
+          <motion.h5>{selectedProject.title}</motion.h5>
+          <motion.p>{selectedProject.description}</motion.p>
+          <motion.button
+            className="close-btn"
+            onClick={() => setSelectedId(null)}
+          >
+            x
+          </motion.button>
         </motion.div>
       </motion.div>
     </motion.div>

@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   color: #42446e;
 }
 .hero__text {
@@ -25,8 +25,7 @@
   color: transparent;
 }
 .circle {
-  width: 40%;
-  min-width: 430px;
+  width: 35%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,11 +41,10 @@
   
 }
 .hero__img {
-
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
   scale: 1.4;
   position: relative;
-  top: -80px;
+  top: -50px;
 
 }
 
@@ -124,8 +122,8 @@
 /* motion cards */
 .motion-card {
   position: relative;
-  width: 30%;
-  min-width: 300px;
+  flex: 1 1 30%;
+  min-width: 280px;
   cursor: pointer;
   border: 3px solid #0e0e0e;
   border-radius: 1rem;
@@ -170,9 +168,8 @@
 }
 .full-card{
   background: #ffffff;
-  width: 50%;
-  min-width: 750px;
-  height: 62%;
+  width: 750px;
+  height: 450px;
   padding: 2rem;
   border-radius: 1rem;
   position: relative;
@@ -183,10 +180,10 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
-.full-card button{
+.full-card .close-btn{
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 5px;
+  right: 5px;
   background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%), linear-gradient(0deg, #42446e, #42446e);
   color: #ffffff;
   text-transform: uppercase;
@@ -200,17 +197,19 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  line-height: 29px;
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  /* line-height: 29px; */
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
   font-weight: 300;
   color: #42446e;
+  text-align: center;
+  margin-top: 1rem;
 }
 .img-container{
   width: 55%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 1rem;
+  /* margin-top: 3rem; */
 }
 .img-container img{
   aspect-ratio: 1.5 / 1;
@@ -268,7 +267,7 @@
   }
   .circle {
     min-width: 280px;
-    margin-bottom: 10vmin;
+    margin-bottom: 10rem;
   }
   .full-card{
     width: 75%;
@@ -281,6 +280,7 @@
   }
   .full-card-body{
     width: 100%;
+    text-align: left;
   }
   .img-container{
     width: 100%;
