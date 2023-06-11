@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { lazy, Suspense } from 'react';
 
@@ -12,7 +12,6 @@ import Loader from './Loader';
 const LazyRootLayout = lazy(() => import('../layouts/RootLayout'));
 
 export default function AnimatedRoutes() {
-  const location = useLocation();
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>

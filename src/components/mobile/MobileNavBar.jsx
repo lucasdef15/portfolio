@@ -25,7 +25,7 @@ const sidebar = {
   },
 };
 
-export default function MobileNavBar({ sidebarStyle, handleClose }) {
+export default function MobileNavBar({ showHeader }) {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
@@ -55,6 +55,10 @@ export default function MobileNavBar({ sidebarStyle, handleClose }) {
 
   return (
     <motion.nav
+      style={{
+        top: showHeader ? 0 : isOpen ? 0 : '-80px',
+        transition: 'top 0.3s',
+      }}
       className="mobile-nav"
       initial={false}
       animate={isOpen ? 'open' : 'closed'}

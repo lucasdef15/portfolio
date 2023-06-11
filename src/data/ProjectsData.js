@@ -55,7 +55,7 @@ export const projectsData = [
     id: '2',
     title: 'Newsletter Sign-up',
     description:
-      'This is a project developed by Frontend Mentor, which I have implemented using React Router for efficient route configuration. To enhance the styling and design, I utilized styled components. The entire application was built using React.js, while form validation was accomplished using React Hook Form and Yup. Additionally, the project is fully responsive.',
+      'This is a project developed by Frontend Mentor using React Router for efficient route configuration. To enhance styling, I utilized styled components. The app was built with React.js, and form validation was done using React Hook Form and Yup. It is fully responsive.',
     techStack: 'React.js, Styled-components, React-Hook-Form, Yup',
     livePreviewLink: 'https://newsletter-sign-up-sigma.vercel.app/',
     codeLink: 'https://github.com/lucasdef15/newsletter-sign-up',
@@ -63,8 +63,8 @@ export const projectsData = [
       newsletter1,
       newsletter2,
       newsletter3,
-      newsletter4,
-      newsletter5,
+      // newsletter4,
+      // newsletter5,
     ],
   },
   {

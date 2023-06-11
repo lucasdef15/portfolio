@@ -1,13 +1,24 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
 import blackLogo from '../assets/logo/Logo__black.png';
 import { AiFillGithub } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
 import MobileNavBar from './mobile/MobileNavBar';
+import { useContext } from 'react';
+import MainContext from '../contexts/MainContext';
 
 export default function Header() {
+  const { showHeader } = useContext(MainContext);
+  const location = useLocation();
+
   return (
-    <header className="header">
+    <header
+      className="header"
+      style={{
+        top: showHeader ? 0 : '-80px',
+        transition: 'top 0.3s',
+      }}
+    >
       <div className="navbar">
         <LinkScroll
           activeClass="logo__none"
@@ -23,7 +34,7 @@ export default function Header() {
         <nav className="navbar__links">
           <NavLink to="/">Home</NavLink>
           <LinkScroll
-            activeClass="active"
+            activeClass={location === '/' ? 'active' : null}
             to="techstack"
             spy={true}
             smooth={true}
@@ -33,7 +44,7 @@ export default function Header() {
             Tech Stack
           </LinkScroll>
           <LinkScroll
-            activeClass="active"
+            activeClass={location === '/' ? 'active' : null}
             to="projects"
             spy={true}
             smooth={true}
@@ -60,7 +71,7 @@ export default function Header() {
           </a>
         </nav>
 
-        <MobileNavBar />
+        <MobileNavBar showHeader={showHeader} />
       </div>
     </header>
   );
