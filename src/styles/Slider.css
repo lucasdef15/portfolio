@@ -22,21 +22,26 @@
     border-radius: 50%;
     font-size: 1.5rem;
     cursor: pointer;
-    background-color: #cacaca61;
+    background-color: #0000000e;
     color: #42446e;
     border: none;
     transform: translateY(-50%);
     display: grid;
     place-content: center;
+    transition: background-color 200ms linear;
+}
+.btn-slide:hover {
+    background-color: #42446e;
+    color: whitesmoke;
 }
 .next {
     position: absolute;
-    right: 2%;
+    right: -3%;
     top: 50%;
 }
 .prev {
     position: absolute;
-    left: 2%;
+    left: -3%;
     top: 50%;
 }
 .container-dots{

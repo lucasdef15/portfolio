@@ -26,29 +26,6 @@ export default function FullCard({ selectedId, setSelectedId, projectsData }) {
           <AnimatePresence>
             <Slider selectedProject={selectedProject} />
           </AnimatePresence>
-          <motion.div className="card__info">
-            <motion.span>
-              <motion.strong>Tech Stack: </motion.strong>
-              {selectedProject.techStack}
-            </motion.span>
-            <motion.div className="card__links">
-              <motion.div className="links">
-                <BsLink45Deg />
-                <motion.a
-                  href={selectedProject.livePreviewLink}
-                  target="_blank"
-                >
-                  Live Preview
-                </motion.a>
-              </motion.div>
-              <motion.div className="links">
-                <BsGithub />
-                <motion.a href={selectedProject.codeLink} target="_blank">
-                  View Code
-                </motion.a>
-              </motion.div>
-            </motion.div>
-          </motion.div>
         </motion.div>
 
         <motion.div className="full-card-body">
@@ -60,6 +37,27 @@ export default function FullCard({ selectedId, setSelectedId, projectsData }) {
           >
             x
           </motion.button>
+        </motion.div>
+
+        <motion.div className="card__info">
+          <motion.span>
+            <motion.strong>Tech Stack: </motion.strong>
+            {selectedProject.techStack}
+          </motion.span>
+          <motion.div className="card__links">
+            <motion.div className="links">
+              <BsLink45Deg />
+              <motion.a href={selectedProject.livePreviewLink} target="_blank">
+                Live Preview
+              </motion.a>
+            </motion.div>
+            <motion.div className="links">
+              <BsGithub />
+              <motion.a href={selectedProject.codeLink} target="_blank">
+                View Code
+              </motion.a>
+            </motion.div>
+          </motion.div>
         </motion.div>
       </motion.div>
     </motion.div>

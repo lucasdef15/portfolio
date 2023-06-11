@@ -17,37 +17,38 @@ export default function About() {
       <div className="about-me">
         <h2 className="title__primary">About Me</h2>
         <p className="text">
-          🚀 I am a highly motivated full-stack developer with a passion for
-          creating dynamic and user-friendly websites 💻. While I've been
-          working with technology for more than 4 years, I have recently been
-          focusing on becoming a full-stack developer and have been studying
-          intensively for the past months 📚.
+          I'm a web developer with a strong drive to create dynamic and
+          user-friendly websites. With over four years of experience in the
+          technology field, I have recently focused my efforts on becoming a
+          front-end developer, dedicating intensive study over the past nine
+          months..
         </p>
         <p className="text">
-          Despite my relatively short time in this field, I am committed to
-          delivering high-quality and efficient web solutions that meet the
-          needs of clients and end-users alike 🙌. My current expertise includes
-          HTML, CSS, JavaScript, React,js and I am familiarizing myself with
-          various frameworks such as Vue.js and Angular 💻💻.
+          Despite my relatively short tenure in this industry, I am deeply
+          committed to delivering high-quality and efficient web solutions that
+          cater to both clients and end-users. My current expertise encompasses
+          HTML, CSS, and JavaScript, and I am actively acquainting myself with
+          various frameworks, including React and Angular.
         </p>
         <p className="text">
-          As a lifelong learner, I am always eager to learn new technologies and
-          stay up-to-date with industry developments 🤓. While I am still new to
-          full-stack development, I have already contributed to the design and
-          development of several small-scale projects, including basic websites
-          and simple e-commerce platforms 🛍️.
+          As an avid lifelong learner, I continuously seek to expand my
+          knowledge and remain abreast of the latest industry advancements.
+          While I am in the early stages of my full-stack development journey, I
+          have already contributed to the design and development of several
+          small-scale projects, ranging from basic websites to simple e-commerce
+          platforms.
         </p>
         <p className="text">
-          In addition to coding, I enjoy participating in online coding
-          communities and contributing to open-source projects 🤝. I am also
-          deeply committed to user experience, and I believe that incorporating
-          this into all of my projects is crucial for their success 💡💻.
+          Beyond coding, I actively engage in online coding communities and
+          contribute to open-source projects. Additionally, I prioritize user
+          experience, recognizing its pivotal role in the success of every
+          project I undertake.
         </p>
         <p className="text">
-          If you're looking for a dedicated and knowledgeable full-stack
-          developer who is eager to take on new challenges, don't hesitate to
-          reach out 🙋‍♂️. I look forward to collaborating with you on your next
-          project 💪💻.
+          If you are in search of a dedicated and knowledgeable web developer
+          who thrives on tackling new challenges, I welcome you to reach out. I
+          am excited to collaborate with you on your next project, bringing my
+          expertise and enthusiasm to the table.
         </p>
       </div>
 
