@@ -11,6 +11,7 @@
 }
 .contact {
   width: 50%;
+  max-width: 735px;
   display: grid;
   gap: 2em;
 }
@@ -61,6 +62,7 @@
 }
 .contact__form {
   width: 40%;
+  max-width: 465px;
   padding: 2em;
   border-radius: 1em;
   background: #dfdfdf8c;

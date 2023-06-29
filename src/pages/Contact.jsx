@@ -54,7 +54,7 @@ export default function Contact() {
 
       <div className="contact__form">
         <h3>Send me a message 🚀</h3>
-        <form onSubmit={handleFormSubmit}>
+        <form>
           <label htmlFor="name">name</label>
           <input
             type="text"
