@@ -6,9 +6,6 @@ import { motion } from 'framer-motion';
 import '../styles/Contact.css';
 
 export default function Contact() {
-  const handleFormSubmit = (event) => {
-    // event.preventDefault();
-  };
   const downloadTxtFile = () => {
     const link = document.createElement('a');
     link.download = 'curriculum.pdf';
