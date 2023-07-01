@@ -1,5 +1,5 @@
 import React from 'react';
-import lucas_img from '../assets/lucas_faria.jpg';
+import lucas_img from '../assets/lucas_faria.webp';
 import { motion } from 'framer-motion';
 
 const heroImgVariants = {

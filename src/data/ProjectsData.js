@@ -1,28 +1,26 @@
-import rickandmortyimg from '../assets/projects/rickandmorty.png';
-import todolistimg from '../assets/projects/todolist.png';
+import rickandmortyimg from '../assets/projects/rickandmorty.webp';
+import todolistimg from '../assets/projects/todolist.webp';
 
-import githubpage1 from '../assets/projects/githubimgs/page1.png';
-import githubpage2 from '../assets/projects/githubimgs/page2.png';
-import githubpage3 from '../assets/projects/githubimgs/page3.png';
-import githubpage4 from '../assets/projects/githubimgs/page4.png';
+import githubpage1 from '../assets/projects/githubimgs/page1.webp';
+import githubpage2 from '../assets/projects/githubimgs/page2.webp';
+import githubpage3 from '../assets/projects/githubimgs/page3.webp';
+import githubpage4 from '../assets/projects/githubimgs/page4.webp';
 
-import mutlformpage1 from '../assets/projects/multiform/step1.png';
-import mutlformpage2 from '../assets/projects/multiform/step2.png';
-import mutlformpage3 from '../assets/projects/multiform/step3.png';
-import mutlformpage4 from '../assets/projects/multiform/step4.png';
-import mutlformpage5 from '../assets/projects/multiform/step5.png';
+import mutlformpage1 from '../assets/projects/multiform/step1.webp';
+import mutlformpage2 from '../assets/projects/multiform/step2.webp';
+import mutlformpage3 from '../assets/projects/multiform/step3.webp';
+import mutlformpage4 from '../assets/projects/multiform/step4.webp';
+import mutlformpage5 from '../assets/projects/multiform/step5.webp';
 
-import ecomerce1 from '../assets/projects/ecomerce/page1.png';
-import ecomerce2 from '../assets/projects/ecomerce/page2.png';
-import ecomerce3 from '../assets/projects/ecomerce/page3.png';
-import ecomerce4 from '../assets/projects/ecomerce/page4.png';
-import ecomerce5 from '../assets/projects/ecomerce/page5.png';
+import ecomerce1 from '../assets/projects/ecomerce/page1.webp';
+import ecomerce2 from '../assets/projects/ecomerce/page2.webp';
+import ecomerce3 from '../assets/projects/ecomerce/page3.webp';
+import ecomerce4 from '../assets/projects/ecomerce/page4.webp';
+import ecomerce5 from '../assets/projects/ecomerce/page5.webp';
 
-import newsletter1 from '../assets/projects/newsletter/page1.png';
-import newsletter2 from '../assets/projects/newsletter/page2.png';
-import newsletter3 from '../assets/projects/newsletter/page3.png';
-import newsletter4 from '../assets/projects/newsletter/page4.png';
-import newsletter5 from '../assets/projects/newsletter/page5.png';
+import newsletter1 from '../assets/projects/newsletter/page1.webp';
+import newsletter2 from '../assets/projects/newsletter/page2.webp';
+import newsletter3 from '../assets/projects/newsletter/page3.webp';
 
 export const projectsData = [
   {
