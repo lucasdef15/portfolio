@@ -17,7 +17,7 @@
   line-height: 1.2em;
   letter-spacing: -1px;
 }
-.hero__text span {
+.hero__text .name {
   background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%),
     linear-gradient(0deg, #42446e, #42446e);
   background-clip: text;
@@ -32,20 +32,18 @@
   background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%),
     linear-gradient(0deg, #42446e, #42446e);
   aspect-ratio: 1 / 1;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 .hero__img__wrapper {
   width: 98%;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   overflow: hidden;
-  
 }
 .hero__img {
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
-  scale: 1.4;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  scale: 1.2;
   position: relative;
-  top: -50px;
-
+  top: -10px;
 }
 
 /* Tech Stack */
@@ -130,21 +128,21 @@
   box-shadow: 10px 10px 0 #0e0e0e;
   overflow: hidden;
 }
-.motion-card img{
+.motion-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / .6;
+  aspect-ratio: 1 / 0.6;
   object-fit: cover;
   -webkit-filter: grayscale(100%) blur(3px);
   filter: grayscale(100%) blur(3px);
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-.motion-card:hover img{
+.motion-card:hover img {
   -webkit-filter: grayscale(0) blur(0);
   filter: grayscale(0) blur(0);
 }
-.motion-card h3{
+.motion-card h3 {
   position: absolute;
   font-size: 1rem;
   inset: 0;
@@ -152,9 +150,13 @@
   place-content: center;
   color: #ffffff;
   opacity: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.527), rgba(122, 122, 122, 0.027));
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.527),
+    rgba(122, 122, 122, 0.027)
+  );
 }
-.backdrop{
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -166,7 +168,7 @@
   justify-content: center;
   align-items: center;
 }
-.full-card{
+.full-card {
   width: 90%;
   max-width: 950px;
   max-height: 100%;
@@ -178,15 +180,16 @@
   border-radius: 1rem;
   position: relative;
 }
-.full-card h5{
+.full-card h5 {
   font-size: 1.5rem;
   font-weight: bold;
 }
-.full-card .close-btn{
+.full-card .close-btn {
   position: absolute;
   top: 5px;
   right: 5px;
-  background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%), linear-gradient(0deg, #42446e, #42446e);
+  background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%),
+    linear-gradient(0deg, #42446e, #42446e);
   color: #ffffff;
   text-transform: uppercase;
   width: 35px;
@@ -194,16 +197,16 @@
   border-radius: 50%;
   cursor: pointer;
 }
-.full-card-body{
-  font-size: .9rem;
+.full-card-body {
+  font-size: 0.9rem;
   font-weight: 300;
   color: #42446e;
   margin-bottom: 1rem;
 }
-.full-card-body h5{
-  margin-bottom: .5rem;
+.full-card-body h5 {
+  margin-bottom: 0.5rem;
 }
-.img-container img{
+.img-container img {
   aspect-ratio: 1.5 / 1;
   border-radius: 1rem 1rem 0 0;
 }
@@ -238,7 +241,7 @@
   text-decoration: underline;
 }
 @media (min-width: 768px) {
-  .full-card{
+  .full-card {
     width: fit-content;
     grid-template-columns: 50% 50%;
     margin: 0 2rem;
@@ -251,14 +254,13 @@
     margin: 0 auto;
     text-align: center;
   }
-  .full-card-body h5{
+  .full-card-body h5 {
     font-size: 2rem;
     line-height: 100px;
   }
-  .img-container img{
+  .img-container img {
     border-radius: 1rem;
   }
-
 }
 @media (max-width: 60em) {
   .hero {
@@ -272,8 +274,8 @@
     text-align: center;
   }
   .hero__img {
-    top: -5vw;
-    scale: 1.4;
+    top: -2vw;
+    scale: 1.2;
   }
   .techstack__title {
     width: 80vw;
