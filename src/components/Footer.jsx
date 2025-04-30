@@ -1,6 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import blackLogo from '../assets/logo/Logo__black.png';
+import blackLogo from '../assets/logo/logo.png';
 import { AiFillGithub } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
 import { AiFillInstagram } from 'react-icons/ai';

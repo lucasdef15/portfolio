@@ -1,6 +1,6 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
-import blackLogo from '../assets/logo/Logo__black.png';
+import blackLogo from '../assets/logo/logo.png';
 import { AiFillGithub } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
 import MobileNavBar from './mobile/MobileNavBar';
@@ -55,20 +55,26 @@ export default function Header() {
           </LinkScroll>
           <NavLink to="about">About</NavLink>
           <NavLink to="contact">Contact</NavLink>
-          <a
-            href="https://github.com/lucasdef15"
+          <button
+            onClick={() =>
+              window.open('https://github.com/lucasdef15', '_blank')
+            }
             target="_blank"
-            className="grid"
+            className="grid nav_btn"
           >
             <AiFillGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/lucas-f-16b2b3113/"
-            target="_blank"
-            className="grid"
+          </button>
+          <button
+            onClick={() =>
+              window.open(
+                'https://www.linkedin.com/in/lucas-f-16b2b3113/',
+                '_blank'
+              )
+            }
+            className="grid nav_btn"
           >
             <AiFillLinkedin />
-          </a>
+          </button>
         </nav>
 
         <MobileNavBar showHeader={showHeader} />

@@ -21,7 +21,7 @@ export default function Card({
   return (
     <>
       <motion.div
-        className="motion-card"
+        className=""
         layoutId={project.id}
         onClick={() => handleClick(project.id)}
       >

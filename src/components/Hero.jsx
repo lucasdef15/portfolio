@@ -2,6 +2,7 @@ import lucas_img from '../assets/lucas_faria1.jpg';
 import { motion } from 'framer-motion';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { useRef } from 'react';
 
 const heroImgVariants = {
   initial: {
@@ -30,6 +31,8 @@ const waveAnimation = {
 };
 
 export default function Hero() {
+  const heroImgRef = useRef();
+
   useGSAP(() => {
     gsap.fromTo(
       '.hero__text p',
@@ -43,6 +46,37 @@ export default function Hero() {
       }
     );
   }, []);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      heroImgRef.current,
+      { y: 500, opacity: 0, rotate: 180 },
+      {
+        y: 0,
+        opacity: 1,
+        rotate: 0,
+        ease: 'power2.inOut',
+        duration: 2,
+        stagger: 0.25,
+      }
+    );
+  }, []);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      '.hero__img__wrapper img',
+      { y: 500, opacity: 0, rotate: 180 },
+      {
+        y: 0,
+        opacity: 1,
+        rotate: 0,
+        ease: 'power2.inOut',
+        duration: 1,
+        stagger: 0.25,
+      }
+    );
+  }, []);
+
   return (
     <div className="hero" id="hero">
       <div className="hero__text">
@@ -78,6 +112,7 @@ export default function Hero() {
         </div>
       </div>
       <motion.div
+        ref={heroImgRef}
         className="circle"
         variants={heroImgVariants}
         initial="initial"
