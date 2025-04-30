@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import lucas_img from '../assets/lucas_faria1.jpg';
 import { motion } from 'framer-motion';
 import { useGSAP } from '@gsap/react';

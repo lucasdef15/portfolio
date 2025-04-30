@@ -74,16 +74,17 @@
   text-align: center;
 }
 .stacks {
-  width: 80vw;
+  width: 100%;
   max-width: 900px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  gap: clamp(2.5em, 5vw, 5em);
+  gap: 2rem;
 }
-.stacks img {
-  width: 12%;
-  min-width: 60px;
+.stacks .stack-img {
+  width: 100px;
+  height: 100px;
   cursor: pointer;
 }
 
