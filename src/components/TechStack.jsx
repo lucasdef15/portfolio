@@ -63,16 +63,23 @@ export default function TechStack() {
   useGSAP(() => {
     gsap.fromTo(
       stackHeadingRef.current.children,
-      { rotate: -90, opacity: 0 },
+      {
+        rotate: -45,
+        y: 30,
+        opacity: 0,
+      },
       {
         rotate: 0,
+        y: 0,
         opacity: 1,
-        stagger: 0.25,
+        duration: 1,
+        ease: 'power3.out',
+        stagger: 0.2,
         scrollTrigger: {
           trigger: stackHeadingRef.current,
-          start: 'top 90%',
-          end: 'bottom 10%',
-          toggleActions: 'play reverse play reverse',
+          start: 'top 85%',
+          end: 'bottom 5%',
+          toggleActions: 'play none none reverse',
         },
       }
     );

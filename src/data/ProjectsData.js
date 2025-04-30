@@ -1,16 +1,25 @@
-import rickandmortyimg from '../assets/projects/rickandmorty.webp';
-import todolistimg from '../assets/projects/todolist.webp';
-
 import githubpage1 from '../assets/projects/githubimgs/page1.webp';
 import githubpage2 from '../assets/projects/githubimgs/page2.webp';
 import githubpage3 from '../assets/projects/githubimgs/page3.webp';
 import githubpage4 from '../assets/projects/githubimgs/page4.webp';
+
+import blog1 from '../assets/projects/blog/blog1.jpeg';
+import blog2 from '../assets/projects/blog/blog2.jpeg';
+import blog3 from '../assets/projects/blog/blog3.jpeg';
+import blog4 from '../assets/projects/blog/blog4.jpeg';
 
 import mutlformpage1 from '../assets/projects/multiform/step1.webp';
 import mutlformpage2 from '../assets/projects/multiform/step2.webp';
 import mutlformpage3 from '../assets/projects/multiform/step3.webp';
 import mutlformpage4 from '../assets/projects/multiform/step4.webp';
 import mutlformpage5 from '../assets/projects/multiform/step5.webp';
+
+import personal1 from '../assets/projects/completeBlog/personal1.png';
+import personal2 from '../assets/projects/completeBlog/personal2.png';
+import personal3 from '../assets/projects/completeBlog/personal3.png';
+import personal4 from '../assets/projects/completeBlog/personal4.png';
+import personal5 from '../assets/projects/completeBlog/personal5.png';
+import personal6 from '../assets/projects/completeBlog/personal6.png';
 
 import ecomerce1 from '../assets/projects/ecomerce/page1.webp';
 import ecomerce2 from '../assets/projects/ecomerce/page2.webp';
@@ -43,7 +52,7 @@ export const projectsData = [
     id: '1',
     title: 'Git Hub User Search',
     description:
-      'Leveraged GitHub Users API for profile data. Used Axios for requests and Material UI + Styled Components for UI. Custom hooks saved theme in local storage, providing seamless personalization.',
+      'Utilizei a GitHub Users API para exibir dados de perfil. As requisições foram feitas com Axios, e a interface foi construída com Material UI e Styled Components. Também desenvolvi hooks personalizados para salvar o tema no local storage, permitindo uma personalização contínua e fluida da experiência do usuário.',
     techStack: 'React.js, Context API, Axios',
     livePreviewLink: 'https://github-user-search-wheat.vercel.app/',
     codeLink: 'https://github.com/lucasdef15/github-user-search',
@@ -53,23 +62,17 @@ export const projectsData = [
     id: '2',
     title: 'Newsletter Sign-up',
     description:
-      'This is a project developed by Frontend Mentor using React Router for efficient route configuration. To enhance styling, I utilized styled components. The app was built with React.js, and form validation was done using React Hook Form and Yup. It is fully responsive.',
+      'Este é um projeto desenvolvido a partir de um desafio do Frontend Mentor, utilizando React Router para uma configuração eficiente de rotas. Para aprimorar o estilo, foram usados styled-components. A aplicação foi construída com React.js, e a validação de formulários foi feita com React Hook Form e Yup. O projeto é totalmente responsivo.',
     techStack: 'React.js, Styled-components, React-Hook-Form, Yup',
     livePreviewLink: 'https://newsletter-sign-up-sigma.vercel.app/',
     codeLink: 'https://github.com/lucasdef15/newsletter-sign-up',
-    coverImage: [
-      newsletter1,
-      newsletter2,
-      newsletter3,
-      // newsletter4,
-      // newsletter5,
-    ],
+    coverImage: [newsletter1, newsletter2, newsletter3],
   },
   {
     id: '3',
     title: 'E-commerce',
     description:
-      'A sleek and modern e-commerce platform designed for sewing enthusiasts of all levels. Features include a shopping cart and individual product pages with detailed information, high-quality images, and customer reviews.',
+      'Uma plataforma de e-commerce elegante e moderna, criada para entusiastas da costura de todos os níveis. Possui recursos como carrinho de compras e páginas individuais de produtos com informações detalhadas, imagens de alta qualidade e avaliações de clientes.',
     techStack: 'HTML5, CSS3, JavaScript',
     livePreviewLink: 'https://rositacosturacriativa.netlify.app',
     codeLink: 'https://github.com/lucasdef15/ecomerce-project',
@@ -77,23 +80,30 @@ export const projectsData = [
   },
   {
     id: '4',
-    title: 'Todo-list',
+    title: 'Personal BLog',
     description:
-      'Keep track of your tasks and stay organized with this intuitive todo-list app. Add, edit delete items and mark them as completed. With responsive user interface, this app is perfect for personal use.',
-    techStack: 'React.js, CSS3',
+      'Desenvolvi um blog pessoal com múltiplas páginas, focado em oferecer uma experiência dinâmica e envolvente para o usuário. Implementei animações estratégicas para tornar a navegação mais fluida e agradável. O projeto utiliza um arquivo JSON para lidar com dados dinâmicos, e também pode ser integrado a um CMS headless para aumentar ainda mais sua flexibilidade e nível profissional.',
+    techStack: 'React.js, CSS3, GSAP, React Mardown, React-Router',
     livePreviewLink: 'https://tourmaline-bavarois-49d2df.netlify.app',
     codeLink: 'https://github.com/lucasdef15/react_todo-list',
-    coverImage: [todolistimg],
+    coverImage: [blog4, blog1, blog2, blog3],
   },
   {
     id: '5',
-    title: 'Rick and Morty Api',
+    title: 'Full-Stack Blog',
     description:
-      'Explore the world of Rick and Morty with this API that provides access to information about characters. With a simple and user-friendly interface, this API is perfect for developers and fans.',
-    techStack: 'React.js, React Router, Axios',
-    livePreviewLink: 'https://celebrated-figolla-13a43e.netlify.app',
-    codeLink: 'https://github.com/lucasdef15/Rick_and_Morty_API_Project',
-    coverImage: [rickandmortyimg],
+      'Este é um projeto de blog full stack em nível profissional, desenvolvido com React, Material UI e TypeScript no front-end, e Node.js, Express e TypeScript no back-end. A aplicação conta com um sistema completo de controle de acesso por funções, permitindo diferentes funcionalidades para administradores e usuários comuns. Possui rotas protegidas, gestão dinâmica de conteúdos, além de uma interface moderna e intuitiva que proporciona uma experiência fluida ao usuário. Do design à implementação, este projeto demonstra uma arquitetura sólida e domínio completo do desenvolvimento full stack — sendo uma excelente vitrine das minhas habilidades em criar aplicações web escaláveis e bem estruturadas.',
+    techStack: 'React.js, Material.UI, Typescript, Node.js',
+    livePreviewLink: 'https://r2619.us/',
+    codeLink: 'https://github.com/lucasdef15/butterflies-hurricane',
+    coverImage: [
+      personal1,
+      personal2,
+      personal3,
+      personal4,
+      personal5,
+      personal6,
+    ],
   },
   // {
   //   id: '5',

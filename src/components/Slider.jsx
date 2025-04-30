@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import BtnSlider from './BtnSlider';
-import { motion } from 'framer-motion';
 import '../styles/Slider.css';
 
 export default function Slider({ selectedProject }) {
