@@ -14,12 +14,12 @@ import mutlformpage3 from '../assets/projects/multiform/step3.webp';
 import mutlformpage4 from '../assets/projects/multiform/step4.webp';
 import mutlformpage5 from '../assets/projects/multiform/step5.webp';
 
-import personal1 from '../assets/projects/completeBlog/personal1.png';
-import personal2 from '../assets/projects/completeBlog/personal2.png';
-import personal3 from '../assets/projects/completeBlog/personal3.png';
-import personal4 from '../assets/projects/completeBlog/personal4.png';
-import personal5 from '../assets/projects/completeBlog/personal5.png';
-import personal6 from '../assets/projects/completeBlog/personal6.png';
+import personal1 from '../assets/projects/completeBlog/personal1.webp';
+import personal2 from '../assets/projects/completeBlog/personal2.webp';
+import personal3 from '../assets/projects/completeBlog/personal3.webp';
+import personal4 from '../assets/projects/completeBlog/personal4.webp';
+import personal5 from '../assets/projects/completeBlog/personal5.webp';
+import personal6 from '../assets/projects/completeBlog/personal6.webp';
 
 import ecomerce1 from '../assets/projects/ecomerce/page1.webp';
 import ecomerce2 from '../assets/projects/ecomerce/page2.webp';
