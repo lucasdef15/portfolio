@@ -28,7 +28,9 @@ export default function Header() {
           offset={-50}
           duration={500}
         >
-          <img className="logo" src={blackLogo} alt="logo" />
+          <Link to="/">
+            <img className="logo" src={blackLogo} alt="logo" />
+          </Link>
         </LinkScroll>
 
         <nav className="navbar__links">

@@ -30,13 +30,12 @@
 .work {
   display: grid;
   gap: 2rem;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .about__card {
   display: grid;
-  gap: .5rem;
+  gap: 0.5rem;
   border-bottom: 1px solid #66666665;
-
 }
 .job {
   display: flex;

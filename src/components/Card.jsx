@@ -1,5 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import FullCard from './FullCard';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const hoverVariant = {
   hover: {
@@ -13,15 +19,41 @@ export default function Card({
   setSelectedId,
   selectedId,
   projectsData,
+  index,
 }) {
   const handleClick = (id) => {
     setSelectedId(id);
   };
+  const cardsRef = useRef([]);
+
+  useGSAP(() => {
+    // Animação dos cards
+    gsap.fromTo(
+      cardsRef.current[index],
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        stagger: 0.35,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: cardsRef.current[index],
+          start: 'top 90%',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+  }, []);
 
   return (
     <>
       <motion.div
-        className=""
+        ref={(el) => (cardsRef.current[index] = el)}
+        className="motion-card"
         layoutId={project.id}
         onClick={() => handleClick(project.id)}
       >

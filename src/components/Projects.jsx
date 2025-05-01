@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { projectsData } from '../data/ProjectsData';
 import Card from './Card';
 import gsap from 'gsap';
@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Projects() {
   const [selectedId, setSelectedId] = useState(null);
   const projectHeadingRef = useRef();
-  const cardsRef = useRef([]);
 
   useGSAP(() => {
     // Animação do título
@@ -36,27 +35,6 @@ export default function Projects() {
         },
       }
     );
-
-    // Animação dos cards
-    gsap.fromTo(
-      cardsRef.current,
-      {
-        y: 50,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.25,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: cardsRef.current[0],
-          start: 'top 90%',
-          toggleActions: 'play none none reverse',
-        },
-      }
-    );
   }, []);
 
   return (
@@ -69,18 +47,13 @@ export default function Projects() {
       <div className="projects__cards">
         {projectsData.map((project, index) => {
           return (
-            <div
-              className="motion-card"
-              key={index}
-              ref={(el) => (cardsRef.current[index] = el)}
-            >
-              <Card
-                project={project}
-                setSelectedId={setSelectedId}
-                selectedId={selectedId}
-                projectsData={projectsData}
-              />
-            </div>
+            <Card
+              index={index}
+              project={project}
+              setSelectedId={setSelectedId}
+              selectedId={selectedId}
+              projectsData={projectsData}
+            />
           );
         })}
       </div>

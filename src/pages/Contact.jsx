@@ -1,11 +1,33 @@
-import React from 'react';
+import { useRef } from 'react';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import cvpdf from '../download/Lucas_cv.pdf';
 import { routesVariants } from '../animations/animations';
 import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import '../styles/Contact.css';
 
 export default function Contact() {
+  const contactRef = useRef();
+
+  useGSAP(() => {
+    gsap.fromTo(
+      contactRef.current.children,
+      { x: -500, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, stagger: 0.25 }
+    );
+    gsap.fromTo(
+      '.wrapper',
+      { x: -500, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, stagger: 0.25 }
+    );
+    gsap.fromTo(
+      '.contact__form',
+      { x: 500, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, stagger: 0.25 }
+    );
+  }, []);
+
   const downloadTxtFile = () => {
     const link = document.createElement('a');
     link.download = 'curriculum.pdf';
@@ -23,7 +45,7 @@ export default function Contact() {
       exit="exit"
     >
       <div className="contact">
-        <div className="contact-title">
+        <div ref={contactRef} className="contact-title">
           <h2>Let&apos;s chat.</h2>
           <h2>Tell me about your projects.</h2>
           <p>Let&apos; create something together 🤟</p>
