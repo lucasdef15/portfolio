@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import BtnSlider from './BtnSlider';
-import '../styles/Slider.css';
+import '../../styles/Slider.css';
 
 export default function Slider({ selectedProject }) {
   const [index, setIndex] = useState(0);

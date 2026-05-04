@@ -1,6 +1,6 @@
-import Hero from '../components/Hero';
-import TechStack from '../components/TechStack';
-import Projects from '../components/Projects';
+import Hero from '../components/layout/Hero';
+import TechStack from '../components/sections/TechStack';
+import Projects from '../components/sections/Projects';
 import '../styles/Home.css';
 import { motion } from 'framer-motion';
 import { routesVariants } from '../animations/animations';

@@ -27,7 +27,6 @@ export default function Card({
   const cardsRef = useRef([]);
 
   useGSAP(() => {
-    // Animação dos cards
     gsap.fromTo(
       cardsRef.current[index],
       {
@@ -45,7 +44,7 @@ export default function Card({
           start: 'top 90%',
           toggleActions: 'play none none reverse',
         },
-      }
+      },
     );
   }, []);
 

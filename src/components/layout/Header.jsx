@@ -1,11 +1,11 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
-import blackLogo from '../assets/logo/logo.png';
+import blackLogo from '../../assets/logo/logo.png';
 import { AiFillGithub } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
-import MobileNavBar from './mobile/MobileNavBar';
+import MobileNavBar from '../navigation/MobileNavBar';
 import { useContext } from 'react';
-import MainContext from '../contexts/MainContext';
+import MainContext from '../../contexts/MainContext';
 
 export default function Header() {
   const { showHeader } = useContext(MainContext);
@@ -70,7 +70,7 @@ export default function Header() {
             onClick={() =>
               window.open(
                 'https://www.linkedin.com/in/lucas-f-16b2b3113/',
-                '_blank'
+                '_blank',
               )
             }
             className="grid nav_btn"

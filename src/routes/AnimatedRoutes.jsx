@@ -6,10 +6,10 @@ import { lazy, Suspense } from 'react';
 const LazyHome = lazy(() => import('../pages/Home'));
 const LazyAbout = lazy(() => import('../pages/About'));
 const LazyContact = lazy(() => import('../pages/Contact'));
-import Loader from './Loader';
+import Loader from '../components/layout/Loader';
 
 //layouts
-const LazyRootLayout = lazy(() => import('../layouts/RootLayout'));
+const LazyRootLayout = lazy(() => import('../components/layouts/RootLayout'));
 
 export default function AnimatedRoutes() {
   return (

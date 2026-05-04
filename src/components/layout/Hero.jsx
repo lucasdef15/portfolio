@@ -1,19 +1,17 @@
-import lucas_img from '../assets/lucas_faria1.jpg';
+import lucas_img from '../../assets/lucas_faria1.jpg';
 import { motion } from 'framer-motion';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useRef } from 'react';
 
 const heroImgVariants = {
-  initial: {
-    y: '50px',
-  },
+  initial: { y: 20 },
   visible: {
-    y: '10px',
+    y: 0,
     transition: {
       repeat: Infinity,
       repeatType: 'mirror',
-      duration: 3,
+      duration: 4, // Mais lento = mais elegante
       ease: 'easeInOut',
     },
   },
@@ -21,9 +19,9 @@ const heroImgVariants = {
 
 const waveAnimation = {
   animate: {
-    rotate: [0, 20, -10, 20, -5, 0],
+    rotate: [0, 10, 0], // Movimento reduzido
     transition: {
-      duration: 1.5,
+      duration: 2.5,
       repeat: Infinity,
       ease: 'easeInOut',
     },
@@ -34,31 +32,31 @@ export default function Hero() {
   const heroImgRef = useRef();
 
   useGSAP(() => {
+    // Texto: vindo de baixo para cima com suavidade
     gsap.fromTo(
       '.hero__text p',
-      { y: -50, opacity: 0 },
+      { y: 30, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        stagger: 0.25,
-        duration: 1,
-        ease: 'power2.inOut',
-      }
+        stagger: 0.15,
+        duration: 1.2,
+        ease: 'expo.out',
+      },
     );
-  }, []);
 
-  useGSAP(() => {
+    // Imagem: Sem rodar, apenas um fade com escala sutil
     gsap.fromTo(
       heroImgRef.current,
-      { y: 500, opacity: 0, rotate: 180 },
+      { scale: 0.9, opacity: 0, y: 40 },
       {
-        y: 0,
+        scale: 1,
         opacity: 1,
-        rotate: 0,
-        ease: 'power2.inOut',
-        duration: 2,
-        stagger: 0.25,
-      }
+        y: 0,
+        ease: 'expo.out',
+        duration: 1.5,
+        delay: 0.5, // Espera o texto começar
+      },
     );
   }, []);
 
@@ -73,7 +71,7 @@ export default function Hero() {
         ease: 'power2.inOut',
         duration: 1,
         stagger: 0.25,
-      }
+      },
     );
   }, []);
 

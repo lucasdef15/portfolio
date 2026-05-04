@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import { projectsData } from '../data/ProjectsData';
-import Card from './Card';
+import { projectsData } from '../../data/ProjectsData';
+import Card from '../common/Card';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -33,7 +33,7 @@ export default function Projects() {
           end: 'bottom 5%',
           toggleActions: 'play none none reverse',
         },
-      }
+      },
     );
   }, []);
 

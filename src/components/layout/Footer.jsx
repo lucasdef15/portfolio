@@ -1,5 +1,4 @@
-import React from 'react';
-import blackLogo from '../assets/logo/logo.png';
+import blackLogo from '../../assets/logo/logo.png';
 import { AiFillGithub } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
 import { AiFillInstagram } from 'react-icons/ai';

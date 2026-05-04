@@ -11,7 +11,7 @@ const backdropVariants = {
 
 export default function FullCard({ selectedId, setSelectedId, projectsData }) {
   const selectedProject = projectsData.find(
-    (project) => project.id === selectedId
+    (project) => project.id === selectedId,
   );
 
   return (
@@ -45,12 +45,17 @@ export default function FullCard({ selectedId, setSelectedId, projectsData }) {
             {selectedProject.techStack}
           </motion.span>
           <motion.div className="card__links">
-            <motion.div className="links">
-              <BsLink45Deg />
-              <motion.a href={selectedProject.livePreviewLink} target="_blank">
-                Live Preview
-              </motion.a>
-            </motion.div>
+            {selectedProject.title !== 'Backend Auth System' && (
+              <motion.div className="links">
+                <BsLink45Deg />
+                <motion.a
+                  href={selectedProject.livePreviewLink}
+                  target="_blank"
+                >
+                  Live Preview
+                </motion.a>
+              </motion.div>
+            )}
             <motion.div className="links">
               <BsGithub />
               <motion.a href={selectedProject.codeLink} target="_blank">

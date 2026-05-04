@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsFillCaretLeftFill } from 'react-icons/bs';
 import { BsFillCaretRightFill } from 'react-icons/bs';
-import '../styles/Slider.css';
+import '../../styles/Slider.css';
 
 export default function BtnSlider({ movieSlide, direction }) {
   const isNext = direction === 'next';

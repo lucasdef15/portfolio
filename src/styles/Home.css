@@ -18,7 +18,8 @@
   letter-spacing: -1px;
 }
 .hero__text .name {
-  background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%),
+  background:
+    linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%),
     linear-gradient(0deg, #42446e, #42446e);
   background-clip: text;
   -webkit-background-clip: text;
@@ -29,7 +30,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%),
+  background:
+    linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%),
     linear-gradient(0deg, #42446e, #42446e);
   aspect-ratio: 1 / 1;
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
@@ -189,7 +191,8 @@
   position: absolute;
   top: 5px;
   right: 5px;
-  background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%),
+  background:
+    linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%),
     linear-gradient(0deg, #42446e, #42446e);
   color: #ffffff;
   text-transform: uppercase;
