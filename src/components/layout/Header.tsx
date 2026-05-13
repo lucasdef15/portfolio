@@ -38,7 +38,6 @@ export default function Header() {
           </Link>
         </LinkScroll>
 
-        {/* Menu Desktop: visível apenas em telas grandes */}
         <nav className="hidden items-center gap-8 min-[50rem]:flex">
           <NavLink
             to="/"
@@ -92,10 +91,8 @@ export default function Header() {
             Contato
           </NavLink>
 
-          {/* Divisor Visual */}
           <div className="h-6 w-[1px] bg-white/10 mx-2" />
 
-          {/* Redes Sociais */}
           <div className="flex items-center gap-4">
             <button
               type="button"
@@ -123,7 +120,6 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* Menu Mobile: visível apenas em telas pequenas, DENTRO do flex */}
         <div className="min-[50rem]:hidden flex items-center">
           <MobileNavBar />
         </div>

@@ -24,60 +24,62 @@ import Tooltip from '../common/Tooltip';
 gsap.registerPlugin(ScrollTrigger);
 
 const teckStackVariants: Variants = {
+  initial: { scale: 1, y: 0, rotate: 0 },
   hover: {
-    scale: 1.15,
-    y: -5,
+    scale: 1.1,
+    y: -10,
+    rotate: 2,
     transition: {
       type: 'spring',
-      stiffness: 400,
-      damping: 25,
+      stiffness: 260,
+      damping: 20,
+      mass: 1,
     },
   },
 };
+
+const stacks = [
+  { img: html5, name: 'HTML5' },
+  { img: css3, name: 'CSS3' },
+  { img: javascript, name: 'JavaScript' },
+  { img: typescript, name: 'TypeScript' },
+  { img: react, name: 'React' },
+  { img: redux, name: 'Redux' },
+  { img: nodejs, name: 'Node.js' },
+  { img: mongodb, name: 'MongoDB' },
+  { img: mysql, name: 'MySQL' },
+  { img: python, name: 'Python' },
+  { img: threejs, name: 'Three.js' },
+  { img: gsapSvg, name: 'GSAP' },
+  { img: figma, name: 'Figma' },
+  { img: vscode, name: 'VSCode' },
+];
 
 export default function TechStack() {
   const stackHeadingRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     gsap.fromTo(
-      '.stacks img',
+      '.stack-card',
       {
-        y: 20,
+        y: 50,
         opacity: 0,
         scale: 0.8,
+        filter: 'blur(10px)',
       },
       {
         y: 0,
         opacity: 1,
         scale: 1,
-        stagger: 0.08,
-        duration: 0.8,
+        filter: 'blur(0px)',
+        stagger: {
+          each: 0.07,
+          from: 'center',
+        },
+        duration: 1.2,
         ease: 'expo.out',
         scrollTrigger: {
-          trigger: '.stacks',
-          start: 'top 85%',
-          toggleActions: 'play none none reverse',
-        },
-      },
-    );
-  }, []);
-
-  useGSAP(() => {
-    if (!stackHeadingRef.current) return;
-    gsap.fromTo(
-      stackHeadingRef.current.children,
-      {
-        y: 20,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: 'power4.out',
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: stackHeadingRef.current,
+          trigger: '.stacks-grid',
           start: 'top 90%',
           toggleActions: 'play none none reverse',
         },
@@ -85,145 +87,41 @@ export default function TechStack() {
     );
   }, []);
 
-  const stackImgClass = 'stack-img h-14 w-14 object-contain md:h-16 md:w-16';
-
   return (
-    <div className="techstack mx-auto my-16 max-w-[900px] px-4" id="techstack">
+    <section className="mx-auto my-32 max-w-[1100px] px-10" id="techstack">
       <div
         ref={stackHeadingRef}
-        className="techstack__title mb-10 flex flex-col gap-2 text-center [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-[#42446e] [&_p]:text-gray-600"
+        className="mb-16 flex flex-col gap-4 text-center"
       >
-        <h2>My Tech Stack</h2>
-        <p>Tecnologias com as quais venho trabalhando recentemente</p>
+        <h2 className="text-4xl md:text-5xl font-bold text-white">
+          Minha{' '}
+          <span className="text-transparent bg-clip-text text-brand-gradient">
+            Tech Stack
+          </span>
+        </h2>
+        <p className="text-muted/80 text-lg max-w-2xl mx-auto">
+          Tecnologias que utilizo para construir soluções robustas, do hardware
+          médico ao software escalável.
+        </p>
       </div>
-      <div className="stacks flex flex-wrap items-center justify-center gap-8 md:gap-10">
-        <Tooltip text="css3">
-          <motion.img
-            className={stackImgClass}
-            src={css3}
-            alt="css3"
-            variants={teckStackVariants}
-            whileHover="hover"
-          />
-        </Tooltip>
-        <Tooltip text="html5">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={html5}
-            alt="html5"
-          />
-        </Tooltip>
-        <Tooltip text="Javascript">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={javascript}
-            alt="javascript"
-          />
-        </Tooltip>
-        <Tooltip text="typescript">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={typescript}
-            alt="typescript"
-          />
-        </Tooltip>
-        <Tooltip text="React">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={react}
-            alt="react"
-          />
-        </Tooltip>
-        <Tooltip text="Redux">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={redux}
-            alt="redux"
-          />
-        </Tooltip>
-        <Tooltip text="Node.js">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={nodejs}
-            alt="nodejs"
-          />
-        </Tooltip>
-        <Tooltip text="MongoDB">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={mongodb}
-            alt="mongodb"
-          />
-        </Tooltip>
-        <Tooltip text="MySQL">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={mysql}
-            alt="mysql"
-          />
-        </Tooltip>
-        <Tooltip text="Figma">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={figma}
-            alt="figma"
-          />
-        </Tooltip>
-        <Tooltip text="VSCode">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={vscode}
-            alt="vscode"
-          />
-        </Tooltip>
-        <Tooltip text="Python">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={python}
-            alt="python"
-          />
-        </Tooltip>
-        <Tooltip text="Three.js">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={threejs}
-            alt="threejs"
-          />
-        </Tooltip>
-        <Tooltip text="GSAP">
-          <motion.img
-            className={stackImgClass}
-            variants={teckStackVariants}
-            whileHover="hover"
-            src={gsapSvg}
-            alt="gsap"
-          />
-        </Tooltip>
+
+      <div className="stacks-grid flex flex-wrap items-center justify-center gap-6 md:gap-8">
+        {stacks.map((stack) => (
+          <Tooltip key={stack.name} text={stack.name}>
+            <motion.div
+              variants={teckStackVariants}
+              whileHover="hover"
+              className="stack-card glass-card h-24 w-24 md:h-28 md:w-28 p-5 cursor-pointer"
+            >
+              <img
+                src={stack.img}
+                alt={stack.name}
+                className="h-full w-full object-contain filter drop-shadow-md"
+              />
+            </motion.div>
+          </Tooltip>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -65,15 +65,13 @@ export default function MobileNavBar() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            // Mudança crucial: h-screen e justify-center
             className="fixed inset-0 z-[100] w-screen h-screen flex flex-col items-center justify-center"
             style={{
-              backgroundColor: 'var(--color-background)', // Sem transparência aqui
+              backgroundColor: 'var(--color-background)',
               backgroundImage:
                 'radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%)',
             }}
           >
-            {/* Botão de fechar mais espaçado */}
             <div className="absolute top-8 right-8">
               <motion.button
                 whileTap={{ scale: 0.9 }}
@@ -84,7 +82,6 @@ export default function MobileNavBar() {
               </motion.button>
             </div>
 
-            {/* Nav centralizada */}
             <nav className="flex flex-col gap-8 items-center justify-center w-full">
               {menuLinks.map((link) => (
                 <motion.div
@@ -118,7 +115,6 @@ export default function MobileNavBar() {
               ))}
             </nav>
 
-            {/* Sociais no rodapé */}
             <motion.div
               variants={itemVariants}
               className="absolute bottom-16 flex gap-12"

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { BsLink45Deg, BsGithub } from 'react-icons/bs';
+import { IoClose } from 'react-icons/io5';
 import type { Project } from '../../data/ProjectsData';
 import Slider from './Slider';
 
@@ -25,75 +26,83 @@ export default function FullCard({
     };
   }, []);
 
-  if (!selectedProject || selectedId == null) {
-    return null;
-  }
+  if (!selectedProject || selectedId == null) return null;
 
   const hasLiveLink = Boolean(selectedProject.livePreviewLink?.trim());
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.2 }}
       onClick={() => setSelectedId(null)}
     >
       <motion.div
         layoutId={selectedId}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="project-dialog-title"
-        className="relative flex max-h-[90vh] w-full max-w-3xl flex-col overflow-y-auto rounded-2xl bg-white shadow-2xl"
+        className="relative flex max-h-[90vh] w-full max-w-6xl flex-col lg:flex-row overflow-hidden rounded-3xl bg-[#161b22] border border-white/10 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          type="button"
-          className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full border-0 bg-white/95 text-xl text-[#42446e] shadow-md transition-colors hover:bg-neutral-100"
+          className="absolute right-4 top-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md transition-transform hover:scale-110 active:scale-95"
           onClick={() => setSelectedId(null)}
-          aria-label="Fechar"
         >
-          ×
+          <IoClose size={24} />
         </button>
 
-        <div className="relative w-full shrink-0 overflow-hidden bg-neutral-100">
+        <div className="relative w-full lg:w-[60%] shrink-0 overflow-hidden bg-[#0d1117] flex items-center justify-center">
           <Slider selectedProject={selectedProject} />
         </div>
 
-        <div className="p-6 pt-5">
-          <h2 id="project-dialog-title" className="pr-12 text-xl font-bold text-[#42446e]">
-            {selectedProject.title}
-          </h2>
-          <p className="mt-3 leading-relaxed text-[#666]">{selectedProject.description}</p>
-        </div>
+        <div className="flex flex-col overflow-y-auto p-6 lg:p-10 custom-scrollbar w-full">
+          <div className="flex flex-col gap-6 h-full">
+            <div className="flex flex-col gap-3">
+              <h2 className="text-2xl lg:text-4xl font-bold text-white leading-tight">
+                {selectedProject.title}
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {selectedProject.technologies?.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-[10px] lg:text-[11px] uppercase tracking-widest font-bold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
 
-        <div className="flex flex-col gap-4 border-t border-[#eee] p-6 text-sm text-[#666]">
-          <p>
-            <strong className="text-[#42446e]">Tech stack: </strong>
-            {selectedProject.techStack}
-          </p>
-          <div className="flex flex-wrap gap-6">
-            {hasLiveLink && (
+            <div className="space-y-4">
+              <h3 className="text-white font-semibold text-lg border-b border-white/10 pb-2">
+                Sobre o projeto
+              </h3>
+              <p className="text-base lg:text-lg leading-relaxed text-slate-400">
+                {selectedProject.description}
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4 pt-6 mt-auto">
+              {hasLiveLink && (
+                <a
+                  href={selectedProject.livePreviewLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 font-bold text-white transition-all hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+                >
+                  <BsLink45Deg size={24} />
+                  Live Demo
+                </a>
+              )}
               <a
-                href={selectedProject.livePreviewLink}
+                href={selectedProject.codeLink}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 font-medium text-[#42446e] underline-offset-2 hover:underline"
+                className="flex items-center justify-center gap-2 rounded-xl bg-white/5 border border-white/10 px-6 py-4 font-bold text-white transition-all hover:bg-white/10"
               >
-                <BsLink45Deg className="shrink-0" aria-hidden />
-                Live preview
+                <BsGithub size={22} />
+                Ver no GitHub
               </a>
-            )}
-            <a
-              href={selectedProject.codeLink}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 font-medium text-[#42446e] underline-offset-2 hover:underline"
-            >
-              <BsGithub className="shrink-0" aria-hidden />
-              Ver código
-            </a>
+            </div>
           </div>
         </div>
       </motion.div>

@@ -1,18 +1,8 @@
-import { motion, type Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useRef } from 'react';
 import type { Project } from '../../data/ProjectsData';
-
-gsap.registerPlugin(ScrollTrigger);
-
-const hoverVariant: Variants = {
-  hover: {
-    scale: 1.3,
-    opacity: 1,
-  },
-};
 
 type CardProps = {
   project: Project;
@@ -21,27 +11,21 @@ type CardProps = {
 };
 
 export default function Card({ project, setSelectedId, index }: CardProps) {
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const el = cardsRef.current[index];
-    if (!el) return;
     gsap.fromTo(
-      el,
+      cardRef.current,
+      { opacity: 0, y: 20 },
       {
-        y: 50,
-        opacity: 0,
-      },
-      {
-        y: 0,
         opacity: 1,
-        duration: 1.5,
-        stagger: 0.35,
+        y: 0,
+        duration: 0.8,
+        delay: index * 0.1,
         ease: 'power2.out',
         scrollTrigger: {
-          trigger: el,
-          start: 'top 90%',
-          toggleActions: 'play none none reverse',
+          trigger: cardRef.current,
+          start: 'top 95%',
         },
       },
     );
@@ -49,25 +33,26 @@ export default function Card({ project, setSelectedId, index }: CardProps) {
 
   return (
     <motion.div
-      ref={(el) => {
-        cardsRef.current[index] = el;
-      }}
-      className="motion-card cursor-pointer overflow-hidden rounded-xl bg-white shadow-[0_8px_30px_rgba(66,68,110,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_40px_rgba(66,68,110,0.12)]"
+      ref={cardRef}
       layoutId={project.id}
       onClick={() => setSelectedId(project.id)}
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.3 }}
+      className="group cursor-pointer flex flex-col bg-[#161b22] border border-white/10 rounded-2xl overflow-hidden hover:border-blue-500/50 transition-colors duration-300"
     >
-      <img
-        src={project.coverImage[0]}
-        alt={project.title}
-        className="aspect-video w-full object-cover"
-      />
-      <motion.h3
-        className="p-4 text-center text-lg font-semibold text-[#42446e]"
-        variants={hoverVariant}
-        whileHover="hover"
-      >
-        {project.title}
-      </motion.h3>
+      <div className="relative aspect-video w-full overflow-hidden border-b border-white/5">
+        <img
+          src={project.coverImage[0]}
+          alt={project.title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+
+      <div className="p-5 flex flex-col gap-2">
+        <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+          {project.title}
+        </h3>
+      </div>
     </motion.div>
   );
 }

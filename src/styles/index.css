@@ -62,7 +62,6 @@
     );
   }
 
-  /* Gradiente para Fundos */
   .bg-brand-gradient {
     background-image: linear-gradient(
       to right,
@@ -71,7 +70,6 @@
     );
   }
 
-  /* Classe para os Links do Header (Substitui a constante JS) */
   .nav-link-gradient {
     @apply relative text-[1.1rem] font-medium transition-all duration-300 opacity-80 hover:opacity-100 hover:-translate-y-px;
     @apply bg-clip-text text-transparent;
@@ -82,7 +80,6 @@
     );
   }
 
-  /* A linha (underline) animada do link */
   .nav-link-gradient::after {
     content: '';
     @apply absolute left-0 -bottom-[5px] h-[2px] w-full origin-left scale-x-0 rounded-md transition-transform duration-300;
@@ -120,5 +117,37 @@
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl 
+           transition-all duration-150 ease-in-out flex items-center justify-center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-card:hover {
+    @apply border-white/20 bg-white/10;
+    box-shadow: 0 0 20px
+      color-mix(in srgb, var(--color-brand-start), transparent 80%);
+  }
+
+  .project-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent 
+           opacity-0 transition-opacity duration-500;
+  }
+
+  .stack-badge {
+    @apply px-3 py-1 text-xs font-medium rounded-full bg-white/10 border border-white/10 text-white/80;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 10px;
   }
 }

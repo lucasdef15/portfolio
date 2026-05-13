@@ -15,24 +15,25 @@ export default function Projects() {
 
   useGSAP(() => {
     if (!projectHeadingRef.current) return;
+
+    // Animação de entrada mais "Smooth"
     gsap.fromTo(
       projectHeadingRef.current.children,
       {
-        rotate: -45,
-        x: -100,
+        y: 30,
         opacity: 0,
+        filter: 'blur(10px)',
       },
       {
-        rotate: 0,
-        x: 0,
+        y: 0,
         opacity: 1,
+        filter: 'blur(0px)',
         duration: 1,
-        ease: 'power3.out',
+        ease: 'expo.out',
         stagger: 0.2,
         scrollTrigger: {
           trigger: projectHeadingRef.current,
-          start: 'top 85%',
-          end: 'bottom 5%',
+          start: 'top 90%',
           toggleActions: 'play none none reverse',
         },
       },
@@ -40,13 +41,25 @@ export default function Projects() {
   }, []);
 
   return (
-    <div className="projects mx-auto my-20 max-w-[1100px] px-4" id="projects">
+    // Aumentamos o max-width para 1200px para alinhar melhor com o Hero
+    <section
+      className="projects mx-auto my-32 max-w-[1200px] px-6"
+      id="projects"
+    >
       <div
         ref={projectHeadingRef}
-        className="projects__title mb-12 flex flex-col gap-2 text-center [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-[#42446e] [&_p]:text-gray-600"
+        className="projects__title mb-16 flex flex-col gap-4 text-center"
       >
-        <h2>Projects</h2>
-        <p>Projetos que desenvolvi até agora</p>
+        <h2 className="text-4xl md:text-5xl font-bold text-white">
+          Meus{' '}
+          <span className="text-transparent bg-clip-text text-brand-gradient">
+            Projetos
+          </span>
+        </h2>
+        <p className="text-muted/80 text-lg max-w-2xl mx-auto">
+          Uma seleção de trabalhos que demonstram minha jornada entre a
+          engenharia e o desenvolvimento.
+        </p>
       </div>
 
       <div className="projects__cards grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -70,6 +83,6 @@ export default function Projects() {
           />
         )}
       </AnimatePresence>
-    </div>
+    </section>
   );
 }

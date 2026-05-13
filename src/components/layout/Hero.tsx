@@ -57,7 +57,7 @@ export default function Hero() {
     <section
       ref={container}
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden p-10 py-35 lg:py-0"
+      className="mx-auto my-32 max-w-[1100px] px-10"
     >
       <div className="absolute top-0 left-0 -z-10 h-full w-full opacity-20 pointer-events-none">
         <div className="rounded-full bg-blue-500/20 blur-[120px]" />
