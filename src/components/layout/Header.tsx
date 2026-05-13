@@ -5,12 +5,6 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import MobileNavBar from '../navigation/MobileNavBar';
 import { useMainContext } from '../../contexts/MainContext';
 
-const gradientLink =
-  'relative text-[1.2rem] font-medium bg-gradient-to-r from-[#13b0f5] to-[#e70faa] bg-[length:200%_auto] bg-left bg-clip-text text-transparent w-max transition-all duration-300 ' +
-  'after:absolute after:left-0 after:-bottom-[5px] after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:rounded-md after:bg-gradient-to-r after:from-[#13b0f5] after:to-[#e70faa] after:transition-transform after:duration-300 ' +
-  'hover:font-black hover:-translate-y-px hover:bg-right hover:after:scale-x-100 ' +
-  '[&.active]:font-black [&.active]:-translate-y-px [&.active]:bg-right [&.active]:after:scale-x-100';
-
 export default function Header() {
   const { showHeader } = useMainContext();
   const { pathname } = useLocation();
@@ -18,127 +12,121 @@ export default function Header() {
 
   return (
     <header
-      className="fixed left-0 top-0 z-2 w-full bg-[#f5f5f5]/96 text-[#666] shadow-[2px_2px_10px_rgba(0,0,0,0.068)]"
+      className="fixed left-0 w-full transition-all duration-500 ease-in-out z-50 border-b border-white/5 backdrop-blur-md"
       style={{
-        fontFamily: "'DM Sans', sans-serif",
-        top: showHeader ? 0 : '-100px',
-        transition: 'top 0.4s ease-in-out',
+        backgroundColor:
+          'color-mix(in oklch, var(--color-background), transparent 15%)',
+        top: showHeader ? 0 : '-150px',
       }}
     >
-      <div className="mx-auto flex w-[80%] max-w-[1400px] items-center justify-between">
+      <div className="mx-auto flex w-[90%] max-w-[1400px] items-center justify-between py-4">
+        {/* Logo */}
         <LinkScroll
-          activeClass="logo__none"
           to="hero"
           spy
           smooth
           offset={-50}
           duration={500}
+          className="cursor-pointer"
         >
           <Link to="/">
             <img
-              className="max-w-[90px] scale-150 p-2"
+              className="max-w-[80px] brightness-0 invert opacity-90 transition-opacity hover:opacity-100"
               src={blackLogo}
               alt="logo"
             />
           </Link>
         </LinkScroll>
 
-        <nav className="hidden items-center gap-8 min-[60rem]:flex">
+        {/* Menu Desktop: visível apenas em telas grandes */}
+        <nav className="hidden items-center gap-8 min-[50rem]:flex">
           <NavLink
             to="/"
             end
             className={({ isActive }) =>
-              [
-                gradientLink,
-                isActive
-                  ? 'font-black bg-right after:scale-x-100 -translate-y-px'
-                  : '',
-              ]
-                .filter(Boolean)
-                .join(' ')
+              `nav-link-gradient ${isActive ? 'active' : ''}`
             }
           >
             Início
           </NavLink>
+
           <LinkScroll
-            activeClass={onHome ? 'active' : ''}
+            activeClass="active"
             to="techstack"
             spy={onHome}
             smooth
             offset={-50}
             duration={500}
-            className={gradientLink}
+            className="nav-link-gradient cursor-pointer"
           >
             Tecnologias
           </LinkScroll>
+
           <LinkScroll
-            activeClass={onHome ? 'active' : ''}
+            activeClass="active"
             to="projects"
             spy={onHome}
             smooth
             offset={-120}
             duration={500}
-            className={gradientLink}
+            className="nav-link-gradient cursor-pointer"
           >
             Projetos
           </LinkScroll>
+
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              [
-                gradientLink,
-                isActive
-                  ? 'font-black bg-right after:scale-x-100 -translate-y-px'
-                  : '',
-              ]
-                .filter(Boolean)
-                .join(' ')
+              `nav-link-gradient ${isActive ? 'active' : ''}`
             }
           >
             Sobre
           </NavLink>
+
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              [
-                gradientLink,
-                isActive
-                  ? 'font-black bg-right after:scale-x-100 -translate-y-px'
-                  : '',
-              ]
-                .filter(Boolean)
-                .join(' ')
+              `nav-link-gradient ${isActive ? 'active' : ''}`
             }
           >
             Contato
           </NavLink>
 
-          <button
-            type="button"
-            onClick={() =>
-              window.open('https://github.com/lucasdef15', '_blank')
-            }
-            className="grid cursor-pointer place-content-center border-0 bg-transparent p-0 text-[1.5rem] font-medium outline-none [&_svg]:text-[1.5rem]"
-            aria-label="GitHub"
-          >
-            <AiFillGithub />
-          </button>
-          <button
-            type="button"
-            onClick={() =>
-              window.open(
-                'https://www.linkedin.com/in/lucas-f-16b2b3113/',
-                '_blank',
-              )
-            }
-            className="grid cursor-pointer place-content-center border-0 bg-transparent p-0 text-[1.5rem] font-medium outline-none [&_svg]:text-[1.5rem]"
-            aria-label="LinkedIn"
-          >
-            <AiFillLinkedin />
-          </button>
+          {/* Divisor Visual */}
+          <div className="h-6 w-[1px] bg-white/10 mx-2" />
+
+          {/* Redes Sociais */}
+          <div className="flex items-center gap-4">
+            <button
+              type="button"
+              onClick={() =>
+                window.open('https://github.com/lucasdef15', '_blank')
+              }
+              className="text-muted hover:text-foreground transition-colors text-[1.5rem]"
+              aria-label="GitHub"
+            >
+              <AiFillGithub />
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                window.open(
+                  'https://www.linkedin.com/in/lucas-f-16b2b3113/',
+                  '_blank',
+                )
+              }
+              className="text-muted hover:text-foreground transition-colors text-[1.5rem]"
+              aria-label="LinkedIn"
+            >
+              <AiFillLinkedin />
+            </button>
+          </div>
         </nav>
 
-        <MobileNavBar showHeader={showHeader} />
+        {/* Menu Mobile: visível apenas em telas pequenas, DENTRO do flex */}
+        <div className="min-[50rem]:hidden flex items-center">
+          <MobileNavBar />
+        </div>
       </div>
     </header>
   );

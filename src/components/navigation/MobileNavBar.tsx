@@ -1,77 +1,146 @@
-import { useRef, useCallback, useEffect } from 'react';
-import { motion, useCycle } from 'framer-motion';
-import { useDimensions } from '../../hooks/use-dimensions';
-import { MenuToggle } from './MenuToggle';
-import Navigation from './Navigation';
+import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Link as LinkScroll } from 'react-scroll';
+import { motion, AnimatePresence } from 'framer-motion';
+import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
-const sidebar = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 230px 40px)`,
-    transition: {
-      type: 'spring',
-      stiffness: 20,
-      restDelta: 2,
-    },
-  }),
-  closed: {
-    clipPath: 'circle(30px at 230px 40px)',
-    transition: {
-      delay: 0.5,
-      type: 'spring',
-      stiffness: 400,
-      damping: 40,
-    },
-  },
-};
-
-type MobileNavBarProps = {
-  showHeader: boolean;
-};
-
-export default function MobileNavBar({ showHeader }: MobileNavBarProps) {
-  const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef<HTMLElement>(null);
-  const { height } = useDimensions(containerRef);
-
-  const handleBodyClick = useCallback(
-    (event: MouseEvent) => {
-      const target = event.target as Node | null;
-      const isExcluded = target && (target as Element).closest?.('.mobile-nav');
-
-      if (isOpen && !isExcluded) {
-        toggleOpen();
-      }
-    },
-    [isOpen, toggleOpen],
-  );
+export default function MobileNavBar() {
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    document.body.addEventListener('click', handleBodyClick, { capture: true });
-    return () => {
-      document.body.removeEventListener('click', handleBodyClick, {
-        capture: true,
-      });
-    };
-  }, [handleBodyClick]);
+    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
+  }, [isOpen]);
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: '-100%' },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1],
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: '-100%',
+      transition: {
+        duration: 0.5,
+        ease: 'easeInOut',
+        staggerChildren: 0.05,
+        staggerDirection: -1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
+  };
+
+  const menuLinks = [
+    { name: 'Início', to: '/', type: 'nav' },
+    { name: 'Projetos', to: 'projects', type: 'scroll' },
+    { name: 'Tecnologias', to: 'techstack', type: 'scroll' },
+    { name: 'Sobre', to: '/about', type: 'nav' },
+    { name: 'Contato', to: '/contact', type: 'nav' },
+  ];
   return (
-    <motion.nav
-      style={{
-        top: showHeader ? 0 : isOpen ? 0 : '-80px',
-        transition: 'top 0.3s',
-      }}
-      className="mobile-nav fixed right-0 top-0 hidden w-[300px] text-xl text-white max-[60rem]:flex"
-      initial={false}
-      animate={isOpen ? 'open' : 'closed'}
-      custom={height}
-      ref={containerRef}
-    >
-      <motion.div
-        className="absolute inset-0 h-[calc(100vh+80px)] w-full bg-[#121212]/92"
-        variants={sidebar}
-      />
-      <Navigation isOpen={isOpen} />
-      <MenuToggle toggle={() => toggleOpen()} />
-    </motion.nav>
+    <div className="flex items-center">
+      <button
+        onClick={() => setIsOpen(true)}
+        className="text-4xl text-brand-end active:scale-90 transition-transform p-2"
+      >
+        <HiMenuAlt3 />
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            // Mudança crucial: h-screen e justify-center
+            className="fixed inset-0 z-[100] w-screen h-screen flex flex-col items-center justify-center"
+            style={{
+              backgroundColor: 'var(--color-background)', // Sem transparência aqui
+              backgroundImage:
+                'radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%)',
+            }}
+          >
+            {/* Botão de fechar mais espaçado */}
+            <div className="absolute top-8 right-8">
+              <motion.button
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setIsOpen(false)}
+                className="text-5xl text-muted/80 hover:text-foreground"
+              >
+                <HiX />
+              </motion.button>
+            </div>
+
+            {/* Nav centralizada */}
+            <nav className="flex flex-col gap-8 items-center justify-center w-full">
+              {menuLinks.map((link) => (
+                <motion.div
+                  key={link.name}
+                  variants={itemVariants}
+                  className="w-full text-center"
+                >
+                  {link.type === 'nav' ? (
+                    <NavLink
+                      to={link.to}
+                      onClick={() => setIsOpen(false)}
+                      className={({ isActive }) =>
+                        `nav-link-mobile ${isActive ? 'active' : ''} text-3xl font-bold`
+                      }
+                    >
+                      {link.name}
+                    </NavLink>
+                  ) : (
+                    <LinkScroll
+                      to={link.to}
+                      smooth
+                      spy
+                      activeClass="active"
+                      onClick={() => setIsOpen(false)}
+                      className="nav-link-mobile cursor-pointer block text-3xl font-bold"
+                    >
+                      {link.name}
+                    </LinkScroll>
+                  )}
+                </motion.div>
+              ))}
+            </nav>
+
+            {/* Sociais no rodapé */}
+            <motion.div
+              variants={itemVariants}
+              className="absolute bottom-16 flex gap-12"
+            >
+              <a
+                href="https://github.com/lucasdef15"
+                target="_blank"
+                className="text-5xl text-brand-start"
+              >
+                <AiFillGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/lucas-f-16b2b3113/"
+                target="_blank"
+                className="text-5xl text-brand-end"
+              >
+                <AiFillLinkedin />
+              </a>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

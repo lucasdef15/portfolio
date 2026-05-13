@@ -5,12 +5,15 @@ import ScrollToTop from '../layout/ScrollToTop';
 
 export default function RootLayout() {
   return (
-    <div className="mx-auto w-[80%] max-w-[1400px]">
+    <div className="relative flex min-h-screen flex-col bg-background selection:bg-brand-start/30 selection:text-brand-end">
       <ScrollToTop />
+
       <Header />
-      <main className="min-h-[50vh] pt-[88px]">
+
+      <main className="flex-grow">
         <Outlet />
       </main>
+
       <Footer />
     </div>
   );
