@@ -5,49 +5,62 @@ import { IoLogoWhatsapp } from 'react-icons/io';
 
 export default function Footer() {
   return (
-    <footer
-      className="mb-8 text-[#666]"
-      style={{ fontFamily: "'DM Sans', sans-serif" }}
-    >
-      <nav className="mx-auto mb-8 flex w-[80%] max-w-[1400px] flex-col items-center justify-between gap-8 border-b border-[rgba(128,128,128,0.56)] pb-8 min-[30rem]:flex-row min-[60rem]:w-full">
-        <div>
-          <img className="max-w-[90px] scale-150 p-2" src={blackLogo} alt="logo" />
+    <footer className="mt-20 pb-12 text-slate-400">
+      <div className="mx-auto flex w-[90%] max-w-[1200px] flex-col items-center gap-10">
+        {/* Linha Divisória com Gradiente Sutil */}
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+        <nav className="flex w-full flex-col items-center justify-between gap-8 md:flex-row">
+          {/* Logo com Filtro para Tema Dark */}
+          <div className="transition-transform hover:scale-105">
+            <img
+              className="max-w-[80px] brightness-0 invert opacity-80"
+              src={blackLogo}
+              alt="logo"
+            />
+          </div>
+
+          {/* Redes Sociais - Estilo Glass */}
+          <div className="flex items-center gap-4">
+            {[
+              {
+                icon: <MdOutlineMailOutline />,
+                href: 'mailto:lucasdefaria2025@gmail.com',
+              },
+              { icon: <IoLogoWhatsapp />, href: 'https://wa.me/5519996154832' },
+              { icon: <AiFillGithub />, href: 'https://github.com/lucasdef15' },
+              {
+                icon: <AiFillLinkedin />,
+                href: 'https://www.linkedin.com/in/lucas-f-16b2b3113/',
+              },
+              {
+                icon: <AiFillInstagram />,
+                href: 'https://www.instagram.com/lucas_wfaria/',
+              },
+            ].map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-xl transition-all hover:bg-blue-500/20 hover:border-blue-500/50 hover:text-blue-400 hover:-translate-y-1"
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+        </nav>
+
+        {/* Créditos Finais */}
+        <div className="text-center">
+          <p className="text-sm font-medium tracking-wide">
+            Designed and built by{' '}
+            <span className="text-white">Lucas Faria</span>
+          </p>
+          <p className="mt-1 text-[10px] uppercase tracking-[0.2em] opacity-50">
+            Built with React & Coffee • 2026
+          </p>
         </div>
-        <div className="flex items-center gap-8 max-[60rem]:gap-6 [&_svg]:h-[30px] [&_svg]:w-[30px] max-[60rem]:[&_svg]:h-5 max-[60rem]:[&_svg]:w-5">
-          <a href="mailto:lucasdef15@hotmail.com" className="grid place-content-center">
-            <MdOutlineMailOutline />
-          </a>
-          <a href="https://wa.me/5519992102121" className="grid place-content-center">
-            <IoLogoWhatsapp />
-          </a>
-          <a
-            href="https://github.com/lucasdef15"
-            target="_blank"
-            rel="noreferrer"
-            className="grid place-content-center"
-          >
-            <AiFillGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/lucas-f-16b2b3113/"
-            target="_blank"
-            rel="noreferrer"
-            className="grid place-content-center"
-          >
-            <AiFillLinkedin />
-          </a>
-          <a
-            href="https://www.instagram.com/lucas_wfaria/"
-            target="_blank"
-            rel="noreferrer"
-            className="grid place-content-center"
-          >
-            <AiFillInstagram />
-          </a>
-        </div>
-      </nav>
-      <div className="text-center text-[clamp(0.8rem,2vw,1rem)]">
-        <p>Designed and built by Lucas Faria with Love & Coffee</p>
       </div>
     </footer>
   );
